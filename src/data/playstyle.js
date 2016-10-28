@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Wizard',
-    skills: ['Destruction', 'Restoration', 'Alteration'],
+    skills: [['Destruction', 'Restoration', 'Alteration']],
     restrictions: ['Light Armor', 'Heavy Armor'],
     craft: 'Enchanting'
   },
@@ -16,7 +16,7 @@ export default [
   },
   {
     title: 'Ranger',
-    skills: ['Light Armor', 'One-Handed Weapons', 'Archery'],
+    skills: [['Light Armor', 'One-Handed Weapons', 'Archery']],
     restrictions: ['Heavy Armor'],
     craft: 'Smithing'
   },
@@ -40,13 +40,13 @@ export default [
   },
   {
     title: 'Shaman',
-    skills: ['Restoration', 'One-Handed Weapons', 'Destruction'],
+    skills: [['Restoration', 'One-Handed Weapons', 'Destruction']],
     restructions: ['Heavy Armor'],
     craft: 'Alchemy'
   },
   {
     title: 'Necromancer/Warlock',
-    skills: ['Conjuration', 'Destruction', 'Alteration'],
+    skills: [['Conjuration', 'Destruction', 'Alteration']],
     restrictions: ['Restoration'],
     craft: 'Alchemy'
   },
@@ -70,7 +70,7 @@ export default [
   },
   {
     title: 'Bard',
-    skills: ['Illusion', 'Restoration', 'One-Handed Weapons'],
+    skills: [['Illusion', 'Restoration', 'One-Handed Weapons']],
     restrictions: ['Destruction'],
     craft: 'Enchanting'
   }

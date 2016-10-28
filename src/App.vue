@@ -2,75 +2,40 @@
   <div id="app">
     <section class="section">
       <div class="container">
-        <a 
-          class="button is-large" 
+        <a
+          class="button is-large"
           @click="generate"
           :class="{'is-loading': isLoading, 'is-disbled': isLoading}">
           Generate
         </a>
       </div>
     </section>
-
-    <section class="section" v-if="isFinished">
+    <section class="section">
       <div class="container">
-        <div class="card">
-          <header class="card-header">
-            <p class="card-header-title">{{ character.race }} {{ character.title }}</p>
-          </header>
-          <div class="card-content">
-            <section class="level">
-              <div class="level-left">
-                <div class="level-item subtitle is-6">
-                  Skills
-                </div> 
-              </div>
-              <div class="level-right">
-                <div class="level-item">One, Two, Three</div>
-              </div>
-            </section>
-            <section class="level">
-              <div class="level-left">
-                <div class="level-item subtitle is-6">
-                  Restrictions
-                </div> 
-              </div>
-              <div class="level-right">
-                <div class="level-item">One, Two, Three</div>
-              </div>
-            </section>
-            <section class="level">
-              <div class="level-left">
-                <div class="level-item subtitle is-6">
-                  Craft
-                </div> 
-              </div>
-              <div class="level-right">
-                <div class="level-item">{{ character.craft }}</div>
-              </div>
-            </section>
-            <section class="level">
-              <div class="level-left">
-                <div class="level-item subtitle is-6">
-                  Follower
-                </div> 
-              </div>
-              <div class="level-right">
-                <div class="level-item">{{ character.follower }}</div>
-              </div>
-            </section>
-          </div>
-        </div>
+        <character
+          v-if="isFinished"
+          :title="character.title"
+          :race="character.race"
+          :follower="character.follower"
+          :craft="character.craft"
+          :skills="character.skills"
+          :restrictions="character.restrictions"/>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+// Data
 import races from './data/races.js'
 import followers from './data/followers.js'
 import factions from './data/factions.js'
 import playstyles from './data/playstyle.js'
 
+// Components
+import Character from './components/Character.vue'
+
+// General stuff
 let blankCharacter = {
   title: '',
   skills: [],
@@ -87,8 +52,10 @@ function getRandomInt (min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
+// Vue stuff
 export default {
   name: 'app',
+
   data () {
     return {
       isLoading: false,
@@ -98,6 +65,7 @@ export default {
       }
     }
   },
+
   methods: {
     generate () {
       // Set to loading and reset the character
@@ -136,6 +104,10 @@ export default {
         resolve(list[randInt])
       })
     }
+  },
+
+  components: {
+    Character
   }
 }
 </script>
