@@ -5,8 +5,11 @@
         <p class="subtitle is-5">{{ race }}</p>
         <hr>
         <div>
-          <div v-for="skillList in skills">
-            {{ skillList.join(', ') }}
+          <div v-for="skillList in skills" class="columns">
+            <skill
+              v-for="skill in skillList"
+              :name="skill"
+              class=""/>
           </div>
         </div>
         <section class="level">
@@ -44,6 +47,8 @@
 </template>
 
 <script>
+import Skill from './Skill.vue'
+
 export default {
   props: {
     title: {
@@ -76,6 +81,9 @@ export default {
       // TODO: Implement for realz
       return this.skills[0]
     }
+  },
+  components: {
+    Skill
   }
 }
 </script>

@@ -8,7 +8,7 @@ export default [
   {
     title: 'Knight',
     skills: [
-      ['Heavy Armor', 'One-Handed Weapons', 'Blocking'],
+      ['Heavy Armor', 'One-Handed Weapons', 'Block'],
       ['Heavy Armor', 'Two-Handed Weapons', 'Archery']
     ],
     restrictions: ['Magic'],
@@ -41,7 +41,7 @@ export default [
   {
     title: 'Shaman',
     skills: [['Restoration', 'One-Handed Weapons', 'Destruction']],
-    restructions: ['Heavy Armor'],
+    restrictions: ['Heavy Armor'],
     craft: 'Alchemy'
   },
   {
